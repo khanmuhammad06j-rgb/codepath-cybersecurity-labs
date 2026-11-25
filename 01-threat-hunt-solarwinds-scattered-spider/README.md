@@ -4,7 +4,7 @@
 
 Took published indicators of compromise from two real-world campaigns and hunted for them in a simulated company’s traffic logs, to find which machines talked to attacker infrastructure, when, and how widely.
 
-**Files:** [`ioc-correlation.spl`](ioc-correlation.spl), a reusable version of the correlation search (field names are examples).
+**Files:** [`ioc-correlation.spl`](ioc-correlation.spl), the correlation search I used (swap the source names and group by Domain for the Scattered Spider hunt).
 
 **Tools:** Splunk, SPL, VirusTotal, Threat intelligence, IOC hunting
 
@@ -51,6 +51,14 @@ Took published indicators of compromise from two real-world campaigns and hunted
 | ciscoacclink.com | WS-IT-204 | Sep 15, 14:23 |
 | linkedinsso.com | WS-HR-888 | Sep 15, 09:47 |
 | logonlink.com | WS-DevOps-441, WS-Finance-307 | Sep 16, 11:15 and 11:28 |
+
+## The full searches
+
+The same correlation search, run against each campaign. It keeps only indicators seen in both the IOC list and the traffic log.
+
+![Full Splunk search for SolarWinds indicators with three matching IPs](images/solarwinds-search-full.webp)
+
+![Full Splunk search for Scattered Spider indicators with three matching domains](images/scattered-spider-search-full.webp)
 
 ## What it showed
 

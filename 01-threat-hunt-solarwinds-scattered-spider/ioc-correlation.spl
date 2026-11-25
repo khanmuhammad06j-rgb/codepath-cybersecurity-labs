@@ -1,7 +1,10 @@
-```Keep only IPs or domains that appear in BOTH the IOC list and the traffic log.```
-(source="iocs.csv" OR source="traffic.csv")
-| eval indicator=coalesce(ioc, dest_ip, dest_domain)
-| stats values(source) AS sources values(computer_name) AS machines values(user_agent) AS user_agents min(_time) AS first_seen max(_time) AS last_seen BY indicator
+```Keep only indicators that appear in BOTH the IOC list and the traffic log.```
+source="IOCs_SolarWinds.csv" OR source="TrafficLog_SolarWinds.csv"
+| stats values(source) as sources,
+        values("Computer Name") as ComputerName,
+        values("User Agent") as UserAgent,
+        values(Date) as Date,
+        values(Time) as Time
+  by "IP Address"
 | where mvcount(sources) > 1
-| convert ctime(first_seen) ctime(last_seen)
-| table indicator machines user_agents first_seen last_seen
+| table "IP Address", ComputerName, UserAgent, Date, Time

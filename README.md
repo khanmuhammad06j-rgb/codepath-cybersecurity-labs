@@ -10,6 +10,7 @@ Each folder has a short write-up (what I did, what I found, what I'd fix) with s
 
 | # | Lab | Tools |
 |---|---|---|
+| 00 | [Prework: Linux command-line warm-up](00-prework/) | Linux shell, Bash, chmod |
 | 01 | [Threat hunt: SolarWinds and Scattered Spider indicators in Splunk](01-threat-hunt-solarwinds-scattered-spider/) | Splunk, SPL, VirusTotal, Threat intelligence |
 | 02 | [SIEM investigation: tracing a malware upload in Splunk](02-siem-malware-investigation/) | Splunk, SPL, Log analysis, Incident timeline |
 | 03 | [Incident response: catching a mislabeled indicator](03-incident-response-ioc-validation/) | Cisco Catalyst, VirusTotal, AbuseIPDB, Incident response |

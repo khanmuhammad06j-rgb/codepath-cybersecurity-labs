@@ -15,6 +15,12 @@ Scripted an attack on a vulnerable file server that escaped its public folder wi
 
 ## The attack running
 
+The lab script: start the vulnerable server, send one URL-encoded traversal request, then clean up.
+
+![attack.sh: starts the server, sends a %2e%2e traversal request, then stops the server](images/attack-script.webp)
+
+The result:
+
 ![Terminal running attack.sh: the server starts, the traversal request is sent, and a private report is returned](images/traversal-output.webp)
 
 *attack.sh starts the vulnerable server, sends the traversal request and cleans up. The response leaks a private report: “Earnings are down 1600%”.*
